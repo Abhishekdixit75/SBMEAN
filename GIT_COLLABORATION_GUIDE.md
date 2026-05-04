@@ -1,6 +1,7 @@
 # 🚀 Git Collaboration Guide for Track Wise
 
 ## Table of Contents
+
 1. [Initial Setup](#initial-setup)
 2. [Forking the Repository](#forking-the-repository)
 3. [Cloning and Setup](#cloning-and-setup)
@@ -18,11 +19,13 @@
 ## Initial Setup
 
 ### Prerequisites
+
 - Git installed on your machine
 - GitHub account
 - Access to the Track Wise repository
 
 ### Configure Git (First Time Only)
+
 ```bash
 # Set your identity
 git config --global user.name "Your Name"
@@ -40,19 +43,21 @@ git config --global credential.helper manager-core
 ## Forking the Repository
 
 ### Step 1: Fork on GitHub
-1. Go to [Track Wise Repository](https://github.com/Deva-cpp/Track-Wise)
+
+1. Go to [Track Wise Repository](https://github.com/Abhishekdixit75/SBMEAN)
 2. Click the **"Fork"** button in the top-right corner
 3. Select your account as the destination
 4. Click **"Create fork"**
 
 ### Step 2: Clone Your Fork
+
 ```bash
 # Clone your forked repository
-git clone https://github.com/YOUR_USERNAME/Track-Wise.git
-cd Track-Wise
+git clone https://github.com/YOUR_USERNAME/SBMEAN.git
+
 
 # Add the original repository as upstream
-git remote add upstream https://github.com/Deva-cpp/Track-Wise.git
+git remote add upstream https://github.com/Abhishekdixit75/SBMEAN.git
 
 # Verify remotes
 git remote -v
@@ -60,62 +65,10 @@ git remote -v
 
 ---
 
-## Cloning and Setup
-
-### For New Team Members
-```bash
-# Clone the repository
-git clone https://github.com/Deva-cpp/Track-Wise.git
-cd Track-Wise
-
-# Install dependencies
-cd frontend
-npm install
-
-cd ../backend
-pip install -r requirements.txt
-
-# Create your development branch
-git checkout -b feature/your-name-initial-setup
-```
-
----
-
-## Branch Management
-
-### Branch Naming Convention
-```
-feature/description-of-feature
-bugfix/description-of-bug
-hotfix/critical-issue
-docs/documentation-update
-refactor/code-improvement
-```
-
-### Creating and Switching Branches
-```bash
-# Create and switch to new branch
-git checkout -b feature/railway-dashboard
-
-# Switch to existing branch
-git checkout main
-git checkout feature/railway-dashboard
-
-# List all branches
-git branch -a
-
-# Delete local branch
-git branch -d feature/old-feature
-
-# Delete remote branch
-git push origin --delete feature/old-feature
-```
-
----
-
 ## Daily Workflow
 
 ### 1. Start of Day
+
 ```bash
 # Switch to main branch
 git checkout main
@@ -134,6 +87,7 @@ git rebase main
 ```
 
 ### 2. During Development
+
 ```bash
 # Check status
 git status
@@ -150,6 +104,7 @@ git push origin feature/your-feature
 ```
 
 ### 3. End of Day
+
 ```bash
 # Commit any remaining changes
 git add .
@@ -164,28 +119,35 @@ git push origin feature/your-feature
 ## Pull Request Process
 
 ### 1. Create Pull Request
+
 1. Go to your forked repository on GitHub
 2. Click **"Compare & pull request"**
 3. Fill in the PR description:
+
    ```markdown
    ## Description
+
    Brief description of changes
 
    ## Type of Change
+
    - [ ] Bug fix
    - [ ] New feature
    - [ ] Breaking change
    - [ ] Documentation update
 
    ## Testing
+
    - [ ] Unit tests pass
    - [ ] Integration tests pass
    - [ ] Manual testing completed
 
    ## Screenshots (if applicable)
+
    Add screenshots here
 
    ## Checklist
+
    - [ ] Code follows project style guidelines
    - [ ] Self-review completed
    - [ ] Comments added for complex code
@@ -193,11 +155,13 @@ git push origin feature/your-feature
    ```
 
 ### 2. Review Process
+
 - Wait for code review
 - Address reviewer comments
 - Update PR if needed
 
 ### 3. Merge Process
+
 - Once approved, maintainer will merge
 - Delete feature branch after merge
 
@@ -206,6 +170,7 @@ git push origin feature/your-feature
 ## Code Review Guidelines
 
 ### For Authors
+
 - Write clear, descriptive commit messages
 - Keep PRs small and focused
 - Add tests for new features
@@ -213,12 +178,14 @@ git push origin feature/your-feature
 - Respond to review comments promptly
 
 ### For Reviewers
+
 - Be constructive and respectful
 - Focus on code quality and functionality
 - Test the changes locally if needed
 - Approve or request changes clearly
 
 ### Commit Message Format
+
 ```
 type(scope): description
 
@@ -233,6 +200,7 @@ refactor(ui): improve dashboard component structure
 ## Conflict Resolution
 
 ### When Conflicts Occur
+
 ```bash
 # Pull latest changes
 git pull upstream main
@@ -249,6 +217,7 @@ git commit -m "resolve: merge conflicts in dashboard component"
 ```
 
 ### Rebase Conflicts
+
 ```bash
 # During rebase, resolve conflicts
 git rebase --continue
@@ -262,6 +231,7 @@ git rebase --abort
 ## Essential Git Commands
 
 ### Basic Commands
+
 ```bash
 # Check status
 git status
@@ -286,6 +256,7 @@ git stash list
 ```
 
 ### Advanced Commands
+
 ```bash
 # Interactive rebase
 git rebase -i HEAD~3
@@ -311,24 +282,28 @@ git clean -fd
 ## Best Practices
 
 ### 1. Branch Strategy
+
 - Always create feature branches from `main`
 - Keep branches focused on single features
 - Delete merged branches regularly
 - Use descriptive branch names
 
 ### 2. Commit Strategy
+
 - Make small, frequent commits
 - Write clear commit messages
 - Test before committing
 - Use conventional commit format
 
 ### 3. Pull Request Strategy
+
 - Keep PRs small and focused
 - Write descriptive PR titles
 - Add screenshots for UI changes
 - Request specific reviewers
 
 ### 4. Code Quality
+
 - Follow project coding standards
 - Write tests for new features
 - Update documentation
@@ -341,11 +316,13 @@ git clean -fd
 ### Common Issues
 
 #### 1. "Your branch is ahead of origin/main"
+
 ```bash
 git push origin main
 ```
 
 #### 2. "Please commit your changes or stash them"
+
 ```bash
 # Option 1: Commit changes
 git add .
@@ -358,12 +335,14 @@ git stash pop
 ```
 
 #### 3. "Failed to push some refs"
+
 ```bash
 git pull upstream main
 git push origin main
 ```
 
 #### 4. "Merge conflicts"
+
 ```bash
 # Resolve conflicts manually
 # Then:
@@ -372,12 +351,14 @@ git commit -m "resolve: merge conflicts"
 ```
 
 #### 5. "Detached HEAD state"
+
 ```bash
 git checkout main
 git checkout -b new-branch-name
 ```
 
 ### Getting Help
+
 ```bash
 # View help for any command
 git help command-name
@@ -393,6 +374,7 @@ git config --list
 ## Team Workflow Summary
 
 ### Daily Routine
+
 1. `git checkout main`
 2. `git pull upstream main`
 3. `git checkout feature/your-branch`
@@ -401,12 +383,14 @@ git config --list
 6. `git push origin feature/your-branch`
 
 ### Weekly Routine
+
 1. Create Pull Request for completed features
 2. Review other team members' PRs
 3. Update documentation
 4. Clean up merged branches
 
 ### Emergency Hotfix
+
 1. `git checkout main`
 2. `git pull upstream main`
 3. `git checkout -b hotfix/critical-issue`
@@ -419,18 +403,18 @@ git config --list
 
 ## Quick Reference Card
 
-| Command | Description |
-|---------|-------------|
-| `git status` | Check current status |
-| `git add .` | Stage all changes |
-| `git commit -m "message"` | Commit changes |
-| `git push origin branch` | Push to remote |
-| `git pull upstream main` | Pull latest changes |
-| `git checkout -b new-branch` | Create new branch |
-| `git branch -a` | List all branches |
-| `git log --oneline` | View commit history |
-| `git stash` | Temporarily save changes |
-| `git rebase main` | Rebase with main |
+| Command                      | Description              |
+| ---------------------------- | ------------------------ |
+| `git status`                 | Check current status     |
+| `git add .`                  | Stage all changes        |
+| `git commit -m "message"`    | Commit changes           |
+| `git push origin branch`     | Push to remote           |
+| `git pull upstream main`     | Pull latest changes      |
+| `git checkout -b new-branch` | Create new branch        |
+| `git branch -a`              | List all branches        |
+| `git log --oneline`          | View commit history      |
+| `git stash`                  | Temporarily save changes |
+| `git rebase main`            | Rebase with main         |
 
 ---
 
@@ -443,5 +427,5 @@ git config --list
 
 ---
 
-*Last Updated: [Current Date]*
-*Version: 1.0*
+_Last Updated: [Current Date]_
+_Version: 1.0_
