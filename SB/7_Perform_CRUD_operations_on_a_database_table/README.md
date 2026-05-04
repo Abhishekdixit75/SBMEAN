@@ -8,4 +8,4 @@ This centralized project demonstrates:
 - A complete **3-Tier Architecture**.
 - **CRUD operations** on a database table (H2).
 - Creation of a **RESTful web service**.
-- Building a functional **Spring Boot application**.
+- Building a functional **Spring Boot application** .
