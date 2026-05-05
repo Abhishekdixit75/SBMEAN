@@ -1,0 +1,77 @@
+<!doctype html>
+<!--
+About: MVC demo UI that wires controller, service, model, and view modules.
+Run: Serve this folder with a local server (ES modules), then open index.html.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MVC Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+      }
+
+      .controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+      }
+
+      input,
+      button {
+        padding: 8px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 500px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple MVC Web Page</h1>
+
+    <div class="controls">
+      <button id="showAllBtn" type="button">Show All Users</button>
+      <input
+        id="userId"
+        type="number"
+        value="1"
+        min="1"
+        placeholder="Enter user id"
+      />
+      <button id="showOneBtn" type="button">Show User By ID</button>
+    </div>
+
+    <div id="output"></div>
+
+    <script type="module">
+      import UserController from "./userController.js";
+
+      const outputEl = document.getElementById("output");
+      const userIdInput = document.getElementById("userId");
+      const showAllBtn = document.getElementById("showAllBtn");
+      const showOneBtn = document.getElementById("showOneBtn");
+
+      const userController = new UserController(
+        outputEl,
+        userIdInput,
+        showAllBtn,
+        showOneBtn,
+      );
+      userController.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<!--
+About: Uses the Fetch API to send GET and POST requests and display responses.
+Run: Open in a browser with internet access (uses jsonplaceholder.typicode.com).
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AJAX GET and POST</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 24px;
+        line-height: 1.5;
+      }
+
+      h1 {
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-top: 0;
+        color: #444;
+      }
+
+      .actions {
+        display: flex;
+        gap: 10px;
+        margin: 14px 0;
+      }
+
+      button {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #f7f7f7;
+      }
+
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 6px;
+        white-space: pre-wrap;
+        min-height: 180px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AJAX Request Handling</h1>
+    <p>Click a button to send a request and view the response.</p>
+
+    <div class="actions">
+      <button id="getBtn" type="button">Send GET</button>
+      <button id="postBtn" type="button">Send POST</button>
+    </div>
+
+    <pre id="output">Response will appear here...</pre>
+
+    <script>
+      const API_URL = "https://jsonplaceholder.typicode.com/posts";
+      const outputEl = document.getElementById("output");
+
+      function showResult(label, data) {
+        outputEl.textContent = label + "\n" + JSON.stringify(data, null, 2);
+      }
+
+      function showError(label, error) {
+        outputEl.textContent = label + ": " + error.message;
+      }
+
+      async function requestJson(url, options) {
+        const response = await fetch(url, options);
+        return response.json();
+      }
+
+      async function handleGet() {
+        try {
+          const data = await requestJson(API_URL + "/1");
+          showResult("GET Response:", data);
+        } catch (error) {
+          showError("GET Error", error);
+        }
+      }
+
+      async function handlePost() {
+        const payload = {
+          title: "New Post",
+          body: "This is sample POST data",
+          userId: 1,
+        };
+
+        try {
+          const data = await requestJson(API_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          });
+          showResult("POST Response:", data);
+        } catch (error) {
+          showError("POST Error", error);
+        }
+      }
+
+      document.getElementById("getBtn").addEventListener("click", handleGet);
+      document.getElementById("postBtn").addEventListener("click", handlePost);
+    </script>
+  </body>
+</html>
