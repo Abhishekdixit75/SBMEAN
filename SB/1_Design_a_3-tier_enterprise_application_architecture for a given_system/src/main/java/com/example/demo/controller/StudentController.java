@@ -12,7 +12,8 @@ import java.util.List;
 @RequestMapping("/api/students")
 public class StudentController {
 
-    @Autowired
+    @Autowired // this annotation is used to inject the dependency of the class which we want to use
+    // this is called as field injection
     private StudentService studentService;
 
     @GetMapping

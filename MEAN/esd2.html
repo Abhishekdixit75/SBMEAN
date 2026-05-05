@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Elements Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.4;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 500px;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+    form, table, figure {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HTML Elements</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Form</h2>
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="course">Course:</label><br>
+        <select id="course" name="course">
+          <option>Web Development</option>
+          <option>Data Science</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Table</h2>
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Marks</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Asha</td>
+          <td>90</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Ravi</td>
+          <td>85</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Media</h2>
+      <figure>
+        <img src="https://via.placeholder.com/400x200" alt="Sample placeholder image">
+        <figcaption>Sample Image</figcaption>
+      </figure>
+
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+      </audio><br><br>
+
+      <video width="320" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>Simple demo of forms, tables, media, and semantic tags.</p>
+  </footer>
+</body>
+</html>
