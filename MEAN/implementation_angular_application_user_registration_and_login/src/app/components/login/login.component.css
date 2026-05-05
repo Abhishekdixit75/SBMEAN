@@ -1,0 +1,14 @@
+/*
+About: Basic layout styles for the login form.
+Run: Use Angular CLI (`ng serve`) from the project root.
+*/
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 280px;
+}
+
+input, button {
+  padding: 8px;
+}

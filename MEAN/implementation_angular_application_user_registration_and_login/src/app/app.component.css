@@ -1,0 +1,14 @@
+/*
+About: Styles for the root navigation links.
+Run: Use Angular CLI (`ng serve`) from the project root.
+*/
+nav {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #0d6efd;
+}
